@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+venv/
+.venv/
+dist/
+build/
+*.egg-info/
+Thumbs.db
+static/meme.jpg
+static/*.png
+static/*.gif

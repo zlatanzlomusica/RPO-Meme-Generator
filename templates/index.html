@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+</head>
+<body>
+    <h1>Meme Generator: Upload and Generate</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <p><label>1. Image:</label><br><input type="file" name="image_file" accept="image/*" required></p>
+        <p><label>2. Top Text:</label><br><input type="text" name="top_text" placeholder="Top caption"></p>
+        <p><label>3. Bottom Text:</label><br><input type="text" name="bottom_text" placeholder="Bottom caption" required></p>
+        <input type="submit" value="Generate Meme">
+    </form>
+
+    {% if meme_image %}
+    <hr>
+    <h2>Result</h2>
+    <img src="{{ url_for('static', filename='meme.jpg', cache=cache_buster) }}" alt="Generated Meme" style="max-width: 600px; height: auto;">
+    {% endif %}
+
+</body>
+</html>
